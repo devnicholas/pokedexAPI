@@ -19,7 +19,7 @@ class rankingController extends Controller
 
     public function get()
     {
-        $ranking = Ranking::paginate(10);
+        $ranking = Ranking::orderBy('points', 'DESC')->paginate(10);
 
         return $ranking;
     }
